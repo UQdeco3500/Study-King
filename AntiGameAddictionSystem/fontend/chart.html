@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anti-addiction system</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Anti-addiction System</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./friend.html">Recommend a friend</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./chart.html">Chart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./game.html">Player game</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./mine.html">Mine</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+</header>
+
+    <div class="chart_box container">
+      <div class="button_box">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Update User Time
+        </button>        
+      </div>
+      <div>
+        <div id="main"></div>
+      </div>
+      <div class="button_box">
+        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Update User Time
+        </button>         -->
+      </div>
+      <div>
+        <div id="simple"></div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Update User Time</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="text-align: left;">
+            <div class="mb-3" >
+              <p>-Game duration for the first week</p>
+              <div style="display: flex;">
+                <div class="" style="margin-right: 1rem;">
+                  <label for="total1" class="form-label">Total time</label>
+                  <input type="number" class="form-control input_week" id="total1" placeholder="0">
+                </div>
+                <div>
+                  <label for="duration1" class="form-label">Unhealthy duration</label>
+                  <input type="number" class="form-control input_week" id="duration1" placeholder="0">
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3" >
+              <p>-Game duration for the second week</p>
+              <div style="display: flex;">
+                <div class="" style="margin-right: 1rem;">
+                  <label for="total2" class="form-label">Total time</label>
+                  <input type="number" class="form-control input_week" id="total2" placeholder="0">
+                </div>
+                <div>
+                  <label for="duration2" class="form-label">Unhealthy duration</label>
+                  <input type="number" class="form-control input_week" id="duration2" placeholder="0">
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3" >
+              <p>-Game duration for the third week</p>
+              <div style="display: flex;">
+                <div class="" style="margin-right: 1rem;">
+                  <label for="total3" class="form-label">Total time</label>
+                  <input type="number" class="form-control input_week" id="total3" placeholder="0">
+                </div>
+                <div>
+                  <label for="duration3" class="form-label">Unhealthy duration</label>
+                  <input type="number" class="form-control input_week" id="duration3" placeholder="0">
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3" >
+              <p>-Game duration for the fourth week</p>
+              <div style="display: flex;">
+                <div class="" style="margin-right: 1rem;">
+                  <label for="total4" class="form-label">Total time</label>
+                  <input type="number" class="form-control input_week" id="total4" placeholder="0">
+                </div>
+                <div>
+                  <label for="duration4" class="form-label">Unhealthy duration</label>
+                  <input type="number" class="form-control input_week" id="duration4" placeholder="0">
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3" >
+              <p>-Game duration for the fifth week</p>
+              <div style="display: flex;">
+                <div class="" style="margin-right: 1rem;">
+                  <label for="total5" class="form-label">Total time</label>
+                  <input type="number" class="form-control input_week" id="total5" placeholder="0">
+                </div>
+                <div>
+                  <label for="duration5" class="form-label">Unhealthy duration</label>
+                  <input type="number" class="form-control input_week" id="duration5" placeholder="0">
+                </div>
+              </div>
+            </div>
+            
+            <div class="mb-3" >
+              <p>-Game duration for the sixth week</p>
+              <div style="display: flex;">
+                <div class="" style="margin-right: 1rem;">
+                  <label for="total6" class="form-label">Total time</label>
+                  <input type="number" class="form-control input_week" id="total6" placeholder="0">
+                </div>
+                <div>
+                  <label for="duration6" class="form-label">Unhealthy duration</label>
+                  <input type="number" class="form-control input_week" id="duration6" placeholder="0">
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3" >
+              <p>-Game duration for the seventh week</p>
+              <div style="display: flex;">
+                <div class="" style="margin-right: 1rem;">
+                  <label for="total7" class="form-label">Total time</label>
+                  <input type="number" class="form-control input_week" id="total7" placeholder="0">
+                </div>
+                <div>
+                  <label for="duration7" class="form-label">Unhealthy duration</label>
+                  <input type="number" class="form-control input_week" id="duration7" placeholder="0">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="mb-3" >
+              <p>-Game duration for the eighth week</p>
+              <div style="display: flex;">
+                <div class="" style="margin-right: 1rem;">
+                  <label for="total8" class="form-label">Total time</label>
+                  <input type="number" class="form-control input_week" id="total8" placeholder="0">
+                </div>
+                <div>
+                  <label for="duration8" class="form-label">Unhealthy duration</label>
+                  <input type="number" class="form-control input_week" id="duration8" placeholder="0">
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3" >
+              <p>-Game duration for the ninth week</p>
+              <div style="display: flex;">
+                <div class="" style="margin-right: 1rem;">
+                  <label for="total9" class="form-label">Total time</label>
+                  <input type="number" class="form-control input_week" id="total9" placeholder="0">
+                </div>
+                <div>
+                  <label for="duration9" class="form-label">Unhealthy duration</label>
+                  <input type="number" class="form-control input_week" id="duration9" placeholder="0">
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3" >
+              <p>-Game duration for the tenth week</p>
+              <div style="display: flex;">
+                <div class="" style="margin-right: 1rem;">
+                  <label for="total10" class="form-label">Total time</label>
+                  <input type="number" class="form-control input_week" id="total10" placeholder="0">
+                </div>
+                <div>
+                  <label for="duration10" class="form-label">Unhealthy duration</label>
+                  <input type="number" class="form-control input_week" id="duration10" placeholder="0">
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="save()">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/chart.js"></script>
+</body>
+</html>

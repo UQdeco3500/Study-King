@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-addiction system</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Anti-addiction System</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./friend.html">Recommend a friend</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./chart.html">Chart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./game.html">Player game</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./mine.html">Mine</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+</header>
+
+    <div class="mine_box container">
+      <h3>Mine Page</h3>
+      <div class="list_mine">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <label>Social Contact:</label>
+            <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Modification frequency</button>
+          </li>
+          <li class="list-group-item">
+            <label>Number of aggressive reports:</label>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Modify the number of reports</button>
+          </li>
+          <li class="list-group-item">
+            <label>Is there a large number of achievements in the library with low global player achievement rates:</label>
+            <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop3">Modified achievement rate</button>
+          </li>
+          <li class="list-group-item">
+            <label>User addiction degree:</label>
+            <label id="addiction">--</label>
+            <button type="button" class="btn btn-primary" style="margin-left: 1vw;"  onclick="Generate()">Generate</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modification frequency</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="text-align: left;">
+            <div class="mb-3" >
+              <label for="week1" class="form-label">Week One</label>
+              <input type="number" class="form-control input_week" id="week1" placeholder="0">
+            </div>
+            <div class="mb-3" >
+              <label for="week2" class="form-label">Week Two</label>
+              <input type="number" class="form-control input_week" id="week2" placeholder="0">
+            </div>
+            <div class="mb-3" >
+              <label for="week3" class="form-label">Week Three</label>
+              <input type="number" class="form-control input_week" id="week3" placeholder="0">
+            </div>
+            <div class="mb-3" >
+              <label for="week4" class="form-label">Week Four</label>
+              <input type="number" class="form-control input_week" id="week4" placeholder="0">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="saveWeek()">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabe2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabe2">Modify the number of reports</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="text-align: left;">
+            <div class="mb-3" >
+              <label for="reports" class="form-label">Reports Number</label>
+              <input type="number" class="form-control input_week" id="reports" placeholder="0">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="saveReports()">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabe3" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabe3">Modified achievement rate</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="text-align: left;">
+            <div class="mb-3" >
+              <label for="rate" class="form-label">Achievement Rate</label>
+              <select class="form-control" id="rate">
+                <option value="1">True</option>
+                <option value="0">False</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="saveAchievement()">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src="./js/mine.js"></script>
+</body>
+</html>
